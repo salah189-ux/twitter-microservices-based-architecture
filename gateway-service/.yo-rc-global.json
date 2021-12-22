@@ -1,0 +1,9 @@
+{
+  "generator-jhipster:7.4.1": {
+    "promptValues": {
+      "packageName": "com.ensias.twitter",
+      "nativeLanguage": "en",
+      "microservicePath": "../tweet-service"
+    }
+  }
+}

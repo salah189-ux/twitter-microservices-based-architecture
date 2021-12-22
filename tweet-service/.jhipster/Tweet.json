@@ -1,0 +1,20 @@
+{
+  "microserviceName": "tweet",
+  "clientRootFolder": "tweet",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "content",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [],
+  "service": "serviceImpl",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "name": "Tweet",
+  "changelogDate": "20211218222106"
+}

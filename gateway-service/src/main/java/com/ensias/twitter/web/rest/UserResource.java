@@ -133,7 +133,7 @@ public class UserResource {
                 }
                 return userService.createUser(userDTO);
             })
-            .doOnSuccess(mailService::sendCreationEmail)
+            //.doOnSuccess(mailService::sendCreationEmail)
             .map(user -> {
                 try {
                     return ResponseEntity

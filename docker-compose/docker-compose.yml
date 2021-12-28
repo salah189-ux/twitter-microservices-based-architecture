@@ -1,4 +1,4 @@
-version: "3.3"
+version: '3.3'
 services:
   gateway:
     image: gateway
@@ -21,6 +21,44 @@ services:
       - POSTGRES_PASSWORD=
       - POSTGRES_HOST_AUTH_METHOD=trust
 
+  hometimelineservice:
+    image: hometimelineservice
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,api-docs
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
+      - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://hometimelineservice-postgresql:5432/homeTimeLineService
+      - SPRING_LIQUIBASE_URL=jdbc:postgresql://hometimelineservice-postgresql:5432/homeTimeLineService
+      - JHIPSTER_SLEEP=30
+      - JHIPSTER_REGISTRY_PASSWORD=admin
+  hometimelineservice-postgresql:
+    image: postgres:13.5
+    environment:
+      - POSTGRES_USER=homeTimeLineService
+      - POSTGRES_PASSWORD=
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
+  searchservice:
+    image: searchservice
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,api-docs
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
+      - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://searchservice-postgresql:5432/searchService
+      - SPRING_LIQUIBASE_URL=jdbc:postgresql://searchservice-postgresql:5432/searchService
+      - JHIPSTER_SLEEP=30
+      - JHIPSTER_REGISTRY_PASSWORD=admin
+  searchservice-postgresql:
+    image: postgres:13.5
+    environment:
+      - POSTGRES_USER=searchService
+      - POSTGRES_PASSWORD=
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
   tweet:
     image: tweet
     environment:
@@ -37,6 +75,25 @@ services:
     image: postgres:13.5
     environment:
       - POSTGRES_USER=tweet
+      - POSTGRES_PASSWORD=
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
+  usertimelineservice:
+    image: usertimelineservice
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,api-docs
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
+      - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://usertimelineservice-postgresql:5432/userTimeLineService
+      - SPRING_LIQUIBASE_URL=jdbc:postgresql://usertimelineservice-postgresql:5432/userTimeLineService
+      - JHIPSTER_SLEEP=30
+      - JHIPSTER_REGISTRY_PASSWORD=admin
+  usertimelineservice-postgresql:
+    image: postgres:13.5
+    environment:
+      - POSTGRES_USER=userTimeLineService
       - POSTGRES_PASSWORD=
       - POSTGRES_HOST_AUTH_METHOD=trust
 

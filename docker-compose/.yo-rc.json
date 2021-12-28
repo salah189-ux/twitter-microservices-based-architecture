@@ -1,6 +1,12 @@
 {
   "generator-jhipster": {
-    "appsFolders": ["gateway-service", "tweet-service"],
+    "appsFolders": [
+      "gateway-service",
+      "home-time-line-service",
+      "search-service",
+      "tweet-service",
+      "user-time-line-service"
+    ],
     "directoryPath": "../",
     "gatewayType": "SpringCloudGateway",
     "clusteredDbApps": {},

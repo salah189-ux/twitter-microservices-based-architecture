@@ -1,0 +1,29 @@
+{
+  "microservicePath": "../messaging-service",
+  "microserviceName": "message",
+  "clientRootFolder": "message",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "messageContent",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "user",
+      "otherEntityName": "user",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "login",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "message"
+    }
+  ],
+  "service": "serviceImpl",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "name": "Message",
+  "changelogDate": "20211228230550"
+}

@@ -3,7 +3,7 @@
     "promptValues": {
       "packageName": "com.ensias.twitter",
       "nativeLanguage": "en",
-      "microservicePath": "../tweet-service"
+      "microservicePath": "../messaging-service"
     }
   }
 }

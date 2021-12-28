@@ -41,6 +41,6 @@
     "clientPackageManager": "npm",
     "enableGradleEnterprise": false,
     "languages": ["en", "fr"],
-    "entities": ["Tweet"]
+    "entities": ["Tweet", "Follow", "Message"]
   }
 }

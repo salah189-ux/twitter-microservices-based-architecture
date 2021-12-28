@@ -1,0 +1,20 @@
+{
+  "microserviceName": "socialgraph",
+  "clientRootFolder": "socialgraph",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "follow",
+      "fieldType": "Following",
+      "fieldValues": "FOLLOW,UNFOLLOW"
+    }
+  ],
+  "relationships": [],
+  "service": "serviceImpl",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "name": "Follow",
+  "changelogDate": "20211228224756"
+}

@@ -1,0 +1,19 @@
+{
+  "microserviceName": "message",
+  "clientRootFolder": "message",
+  "databaseType": "sql",
+  "fields": [
+    {
+      "fieldName": "messageContent",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "service": "serviceImpl",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "name": "Message",
+  "changelogDate": "20211228230550"
+}
